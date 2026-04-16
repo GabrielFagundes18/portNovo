@@ -1,106 +1,115 @@
 import { motion } from "framer-motion";
+import { 
+  FaReact, FaNodeJs, FaCss3, FaDatabase, FaJava, FaPython, FaGitAlt 
+} from "react-icons/fa";
+import { 
+  SiTypescript, SiJavascript, SiPostgresql, SiStyledcomponents, 
+  SiExpress, SiVercel, SiGithub, SiHtml5, SiLucide, SiBootstrap,SiFramer
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { DiNetbeans } from "react-icons/di";
+
 import styles from "./Tech.module.css";
 
-// Mantive suas hardSkills e softSkills...
-const hardSkills = [
-  { name: "React 19", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "TypeScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-  { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-  { name: "HTML5", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-  { name: "CSS3", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-  { name: "Styled Components", img: "https://cdn.simpleicons.org/styledcomponents/DB7093" },
-  { name: "Node.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "Express", img: "https://cdn.simpleicons.org/express/ffffff" },
-  { name: "PostgreSQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-  { name: "Neon", img: "https://neon.com/brand/neon-logomark-dark-color.svg?updated=2026-01-21&dpl=dpl_4a9XNVah4x45ZEjVRAdutg3571oB" },
-  { name: "Java", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-  { name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-  { name: "Git", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-  { name: "Vercel", img: "https://cdn.simpleicons.org/vercel/ffffff" },
-  { name: "GitHub", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-  { name: "NetBeans", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache-netbeans/1B6AC6" },
+const skillCategories = [
+  {
+    title: "Frontend",
+    skills: [
+      { icon: <FaReact />, name: "React 19", color: "#61DAFB" },
+      { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
+      { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
+      { icon: <SiHtml5 />, name: "HTML5", color: "#E34F26" },
+      { icon: <FaCss3 />, name: "CSS3", color: "#1572B6" },
+      { icon: <SiStyledcomponents />, name: "Styled Components", color: "#DB7093" },
+      { icon: <SiBootstrap />, name: "Bootstrap", color: "#7952B3" },
+    ]
+  },
+  {
+    title: "Backend & DB",
+    skills: [
+      { icon: <FaNodeJs />, name: "Node.js", color: "#339933" },
+      { icon: <SiExpress />, name: "Express", color: "#ffffff" },
+      { icon: <SiPostgresql />, name: "PostgreSQL", color: "#4169E1" },
+      { icon: <FaDatabase />, name: "Database", color: "#4169E1" },
+      { icon: <FaJava />, name: "Java", color: "#ED8B00" },
+      { icon: <FaPython />, name: "Python", color: "#3776AB" },
+     
+
+    ]
+  },
+  {
+    title: "Ferramentas & Infra",
+    skills: [
+      { icon: <FaGitAlt />, name: "Git", color: "#F05032" },
+      { icon: <SiGithub />, name: "GitHub", color: "#ffffff" },
+      { icon: <SiVercel />, name: "Vercel", color: "#ffffff" },
+      { icon: <VscVscode />, name: "VS Code", color: "#0078D4" },
+      { icon: <DiNetbeans />, name: "NetBeans", color: "#0078D4" },
+      { icon: <SiLucide />, name: "Lucide Icons", color: "#22C55E" },
+      { icon: <SiFramer />, name: "Framer Motion", color: "#0055FF" },
+    ]
+  }
 ];
 
 const softSkills = [
   "Comunicação Assertiva", "Resolução de Problemas", "Foco em UX", 
   "Mentalidade Ágil", "Pensamento Analítico", "Colaboração em Equipe", 
-  "Aprendizado Contínuo", "Gestão de Tempo", "Adaptabilidade", "Atenção aos Detalhes"
+  "Aprendizado Contínuo", "Gestão de Tempo", "Adaptabilidade"
 ];
 
-// Configurações de animação (Variantes)
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 } // Efeito cascata automático
-  }
-};
 
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }
-};
 
 export function Tech() {
   return (
     <section id="tech" className={styles.techSection}>
-      <motion.div 
-        className={styles.header}
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <span className={styles.subtitle}>Ecosistema</span>
-        <h2 className={styles.title}>Stack & Infraestrutura</h2>
-      </motion.div>
+      <div className={styles.header}>
+        <span className={styles.subtitle}>Competências</span>
+        <h2 className={styles.title}>Tecnologias & Skills</h2>
+      </div>
 
-      <motion.div 
-        className={styles.grid}
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        {hardSkills.map((tech) => (
-          <motion.div
-            key={tech.name}
-            variants={itemVariants}
-            whileHover={{ 
-              scale: 1.05, 
-              rotateY: 10, // Leve rotação 3D
-              borderColor: "#3b82f6",
-              boxShadow: "0px 0px 20px rgba(59, 130, 246, 0.3)"
-            }}
-            className={styles.card}
+      <div className={styles.mainGrid}>
+        {skillCategories.map((category, idx) => (
+          <motion.div 
+            key={category.title} 
+            className={styles.column}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: idx * 0.1 }}
           >
-            <div className={styles.iconWrapper}>
-              <img src={tech.img} alt={tech.name} className={styles.icon} />
+            <h3 className={styles.columnTitle}>
+              <span className={styles.hash}>#</span> {category.title}
+            </h3>
+            
+            <div className={styles.list}>
+              {category.skills.map((tech) => (
+                <motion.div
+                  key={tech.name}
+                  className={styles.listItem}
+                  whileHover={{ scale: 1.02, x: 5 }}
+                >
+                  <div className={styles.iconBox} style={{ color: tech.color }}>
+                    {tech.icon}
+                  </div>
+                  <span className={styles.techName}>{tech.name}</span>
+                </motion.div>
+              ))}
             </div>
-            <span className={styles.techName}>{tech.name}</span>
-            {/* Brilho interno no hover */}
-            <div className={styles.glow} />
           </motion.div>
         ))}
-      </motion.div>
-
-      <motion.div 
-        className={styles.softSkillsContainer}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-      >
+      </div>
+      
+      <div className={styles.softSkillsRow}>
         {softSkills.map((skill, i) => (
-          <motion.div 
+          <motion.span 
             key={i} 
-            whileHover={{ scale: 1.1, backgroundColor: "#3b82f6", color: "#fff" }}
-            drag
-            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // "Bolinha" elástica
-            className={styles.softSkillBadge}
+            className={styles.minimalBadge}
+            whileHover={{ y: -5, color: "#3b82f6" }}
           >
             {skill}
-          </motion.div>
+          </motion.span>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

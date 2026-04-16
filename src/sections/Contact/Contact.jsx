@@ -38,7 +38,7 @@ export function Contact() {
             </div>
             <div className={styles.cardInfo}>
               <span>E-mail</span>
-              <strong>gabrielfagundesoliveira35@gmail.com</strong>
+              <strong>gabrielfagundesvv@gmail.com</strong>
             </div>
             <FiSend size={20} className={styles.arrowIcon} />
           </motion.a>
@@ -46,7 +46,7 @@ export function Contact() {
           {/* Redes Sociais */}
           <div className={styles.socialGroup}>
             <a
-              href="https://linkedin.com/in/gabriel-fagundes-de-oliveira-b98a002a2/"
+              href="https://www.linkedin.com/in/gabrielfagundesdeoliveira/"
               target="_blank"
               rel="noreferrer"
               className={styles.socialCard}
@@ -55,7 +55,7 @@ export function Contact() {
               <span>LinkedIn</span>
             </a>
             <a
-              href="https://github.com/GabrielFagundes"
+              href="https://github.com/GabrielFagundes18"
               target="_blank"
               rel="noreferrer"
               className={styles.socialCard}

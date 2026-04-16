@@ -22,7 +22,13 @@ import {
   SiStyledcomponents,
   SiVercel,
   SiExpress,
+  SiGithub,
+  SiHtml5,
+  SiLucide,
+  SiBootstrap,
 } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { DiNetbeans } from "react-icons/di";
 import { HiOutlineLightningBolt } from "react-icons/hi";
 import { ChevronRight } from "lucide-react";
 
@@ -61,6 +67,12 @@ export function Hero() {
     { icon: <FaGitAlt />, name: "Git", color: "#F05032" },
     { icon: <SiExpress />, name: "Express", color: "#ffffff" },
     { icon: <SiVercel />, name: "Vercel", color: "#ffffff" },
+    { icon: <SiGithub />, name: "GitHub", color: "#ffffff" },
+    { icon: <SiHtml5 />, name: "HTML5", color: "#E34F26" },
+    { icon: <SiLucide />, name: "Lucide", color: "#22C55E" },
+    { icon: <SiBootstrap />, name: "Bootstrap", color: "#7952B3" },
+    { icon: <VscVscode />, name: "Visual Studio Code", color: "#0078D4" },
+    { icon: <DiNetbeans />, name: "NetBeans", color: "#0078D4" },
   ];
 
   const orbStack = useMemo(() => {
@@ -103,7 +115,7 @@ export function Hero() {
               events: {
                 onHover: {
                   enable: true,
-                  mode: "grab", // Cria a teia prendendo no mouse
+                  mode: "grab",
                 },
                 onClick: {
                   enable: true,
@@ -114,7 +126,7 @@ export function Hero() {
                 grab: {
                   distance: 250,
                   links: {
-                    opacity: 0.3, // Teia bem visível no mouse
+                    opacity: 0.3,
                     color: "#3b82f6",
                   },
                 },
@@ -131,14 +143,14 @@ export function Hero() {
               },
               move: {
                 enable: true,
-                speed: 2, // Velocidade para parecer processamento
+                speed: 2,
                 direction: "none",
                 random: false,
                 straight: false,
-                outModes: { default: "bounce" }, // Quica nas bordas para não sumir
+                outModes: { default: "bounce" },
               },
               number: {
-                value: isMobile ? 40 : 100, // Mais partículas = mais teia
+                value: isMobile ? 40 : 100,
                 density: {
                   enable: true,
                   area: 800,
@@ -148,7 +160,7 @@ export function Hero() {
                 value: 0.3,
               },
               shape: {
-                type: "circle", // Círculo funciona sempre com loadSlim
+                type: "circle",
               },
               size: {
                 value: { min: 1, max: 3 },
@@ -168,10 +180,11 @@ export function Hero() {
         >
           <div className={styles.badge}>
             <span className={styles.dot} />
-            Gabriel Oliveira
+            Gabriel Fagundes Oliveira
           </div>
           <h1 className={styles.title}>
-            Tech Stack <span className={styles.accent}>Full Stack</span>
+            Desenvolvedor <br />
+            <span className={styles.accent}>Full Stack</span>
             <span>.</span>
           </h1>
           <p className={styles.description}>
@@ -196,36 +209,24 @@ export function Hero() {
 
         <div className={styles.imageSection}>
           <div className={styles.photoContainer}>
-            {!isMobile &&
-              orbStack.map((tech, index) => (
-                <motion.div
-                  key={index}
-                  className={styles.techIconOrb}
-                  style={{
-                    top: tech.top,
-                    left: tech.left,
-                    color: tech.color,
-                    transform: "translate(-50%, -50%)",
-                  }}
-                  initial={tech.initial}
-                  animate={tech.animate}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.08,
-                    ease: "easeOut",
-                  }}
-                  title={tech.name}
-                >
-                  {tech.icon}
-                </motion.div>
-              ))}
+            <div className={styles.orbitWrapper}>
+              {!isMobile &&
+                orbStack.map((tech, index) => (
+                  <motion.div
+                    key={index}
+                    className={styles.techIconOrb}
+                    style={{
+                      top: tech.top,
+                      left: tech.left,
+                      color: tech.color,
+                    }}
+                  >
+                    {tech.icon}
+                  </motion.div>
+                ))}
+            </div>
 
-            <motion.div
-              className={styles.hexFrame}
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+            <motion.div className={styles.hexFrame}>
               <img
                 src="/gabriel.jpg"
                 alt="Gabriel Oliveira"
@@ -233,6 +234,7 @@ export function Hero() {
               />
               <div className={styles.overlay} />
             </motion.div>
+
             <div className={styles.photoBg} />
           </div>
         </div>
