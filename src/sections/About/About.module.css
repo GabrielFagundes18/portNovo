@@ -174,38 +174,7 @@
   gap: 1.5rem;
 }
 
-.mainBtn,
-.secondaryBtn {
-  padding: 1.1rem 2.2rem;
-  border-radius: 16px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
 
-.mainBtn {
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 10px 20px var(--accent-dim);
-}
-
-.secondaryBtn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-.mainBtn:hover {
-  transform: translateY(-5px);
-  filter: brightness(1.1);
-}
-.secondaryBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--accent);
-}
 
 @keyframes spin {
   from {

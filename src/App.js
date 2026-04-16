@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 // 1. Estilos Globais (Sempre no topo para garantir a base do design)
 import "./styles/globals.css";
 
@@ -10,6 +11,7 @@ import { Tech } from "./sections/Tech/Tech";
 import { Projects } from "./sections/Projects/Projects";
 import { About } from "./sections/About/About";
 import { Contact } from "./sections/Contact/Contact";
+import{ Footer } from "./sections/Footer/Footer"
 
 function App() {
   return (
@@ -22,17 +24,7 @@ function App() {
         <About />
         <Contact />
       </main>
-      <footer
-        style={{
-          padding: "40px 20px",
-          textAlign: "center",
-          borderTop: "1px solid var(--border)",
-          fontSize: "0.8rem",
-          color: "var(--text-dim)",
-        }}
-      >
-        © 2026 Gabriel Oliveira. Desenvolvido com React 19.
-      </footer>
+      <Footer />
     </>
   );
 }

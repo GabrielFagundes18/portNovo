@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { FaGithub, FaDownload } from "react-icons/fa";
 import { HiOutlineChip } from "react-icons/hi";
+import curriculo from "../../assets/Gabriel_Fagundes_Frontend.pdf";
 import {
   MdOutlineCode,
   MdTranslate,
@@ -10,6 +11,7 @@ import {
 } from "react-icons/md";
 
 import styles from "./About.module.css";
+import { Button } from "../../components/Button/Button";
 
 export function About() {
   const [repoCount, setRepoCount] = useState(0);
@@ -143,22 +145,24 @@ export function About() {
           </div>
 
           <div className={styles.actions}>
-            <a
-              href="/Resume_Gabriel_Fagundes.pdf"
-              target="_blank"
-              className={styles.mainBtn}
-            >
-              <FaDownload size={18} />
+            <Button
+              as="a"
+              href={curriculo}
+              download="CV_Gabriel_Fagundes.pdf"
+              variant="primary"
+            ><FaDownload/>
               Download CV
-            </a>
-            <a
+            </Button>
+
+            <Button
               href="https://github.com/GabrielFagundes18"
               target="_blank"
-              className={styles.secondaryBtn} rel="noopener noreferrer"
+              variant="outline"
+              rel="noopener noreferrer"
             >
-              <FaGithub size={18} />
+              <FaGithub />
               GitHub
-            </a>
+            </Button>
           </div>
         </motion.div>
       </div>

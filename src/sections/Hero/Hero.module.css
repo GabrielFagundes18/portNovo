@@ -125,7 +125,7 @@
   filter: drop-shadow(0 0 10px currentColor);
 
   /* Counter-rotate para o ícone não ficar de cabeça para baixo */
-  animation: counterRotate 40s linear infinite;
+  animation: counterRotate 16s linear infinite;
 }
 
 @keyframes counterRotate {
@@ -182,6 +182,9 @@
   .content,
   .actions {
     align-items: center;
+  }
+  .badge{
+    margin-top: 3rem;
   }
 }
 

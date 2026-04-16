@@ -139,31 +139,9 @@ z-index: 1;
   z-index: 10;
 }
 
-.btnMain {
-  background: #fff;
-  color: #000;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 0.8rem;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
 
-.btnGit {
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid #222;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  text-decoration: none;
-}
+
+
 
 /* Responsividade */
 @media (max-width: 550px) {

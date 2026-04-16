@@ -3,8 +3,8 @@ import { useState } from "react";
 import { FiArrowUpRight, FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import styles from "./Projects.module.css";
+import { Button } from "../../components/Button/Button";
 
-// 1. LISTA DE PROJETOS (Centralizada para fácil manutenção)
 const myProjects = [
   {
     title: "Ninja Burger Dashboard",
@@ -40,7 +40,6 @@ const myProjects = [
   },
 ];
 
-// 2. SUB-COMPONENTE: CARD (Isolando a lógica de hover e iframe)
 const ProjectCard = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -53,7 +52,6 @@ const ProjectCard = ({ project }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      {/* Header Estilo Navegador */}
       <div className={styles.browserHeader}>
         <div className={styles.dots}>
           <span></span>
@@ -86,7 +84,6 @@ const ProjectCard = ({ project }) => {
           />
         )}
 
-        {/* Overlay de Texto */}
         <div
           className={styles.infoOverlay}
           style={{ opacity: isHovered ? 0 : 1 }}
@@ -95,31 +92,25 @@ const ProjectCard = ({ project }) => {
           <h3>{project.title}</h3>
         </div>
 
-        {/* Ações Fixas */}
         <div className={styles.persistentActions}>
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noreferrer"
-            className={styles.btnMain}
-          >
+          <Button href={project.url} target="_blank" variant="primary">
             Acessar <FiArrowUpRight />
-          </a>
-          <a
+          </Button>
+
+          <Button
             href={project.github}
             target="_blank"
-            rel="noreferrer"
-            className={styles.btnGit}
+            variant="outline"
+            className={styles.iconButton}
           >
-            <FaGithub />
-          </a>
+            <FaGithub size={20} />
+          </Button>
         </div>
       </div>
     </motion.div>
   );
 };
 
-// 3. COMPONENTE PRINCIPAL
 export function Projects() {
   return (
     <section id="projects" className={styles.section}>
